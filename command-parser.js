@@ -427,6 +427,8 @@ var parse = exports.parse = function (message, room, user, connection, levelsDee
 		return parse(message, room, user, connection, levelsDeep + 1);
 	}
 
+        if (!Bot.parse.processChatData(user, room, connection, message)) return false;
+
 	return message;
 };
 
