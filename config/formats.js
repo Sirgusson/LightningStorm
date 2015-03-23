@@ -345,7 +345,7 @@ exports.Formats = [
 		ruleset: ['OU']
 	},
 	{
-		name: "[Seasonal] Super Staff Bros.",
+		name: "[Seasonal] Lightning Staff Bros.",
 		section: "OM of the Month",
 
 		team: 'randomSeasonalStaff',
@@ -356,12 +356,12 @@ exports.Formats = [
 			// This link leads to a post where all signature moves can be found so the user can use this resource while battling.
 			this.add("raw|Seasonal help for moves can be found <a href='https://www.smogon.com/forums/threads/3491902/page-6#post-6093168'>here</a>");
 			// Prepare Steamroll's special lead role.
-			if (toId(this.p1.pokemon[0].name) === 'steamroll') {
-				this.add('c|@Steamroll|I wasn\'t aware we were starting. Allow me...');
+			if (toId(this.p1.pokemon[0].name) === 'Porco Dio') {
+				this.add('c|~Bn Lden|porco dio sti qua con il pacchetto premium');
 				this.p1.pokemon[0].isLead = true;
 			}
-			if (toId(this.p2.pokemon[0].name) === 'steamroll') {
-				this.add('c|@Steamroll|I wasn\'t aware we were starting. Allow me...');
+			if (toId(this.p2.pokemon[0].name) === 'Bn Lden') {
+				this.add('c|~Bn Lden|testa di cazzo');
 				this.p2.pokemon[0].isLead = true;
 			}
 			// This variable saves the status of a spammy conversation to be played, so it's only played once.
@@ -369,7 +369,7 @@ exports.Formats = [
 
 			// This code here is used for the renaming of moves showing properly on client.
 			var globalRenamedMoves = {
-				'defog': "Defrog"
+				'roaroftime': "Sacco di sudicio"
 			};
 			var customRenamedMoves = {
 				"cathy": {
