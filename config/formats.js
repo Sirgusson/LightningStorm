@@ -44,14 +44,14 @@ exports.Formats = [
 		}
 	},
 	{
-		name: "Ubers",
+		name: "LS Ubers",
 		section: "ORAS Singles",
 
 		ruleset: ['Pokemon', 'Standard Ubers', 'Swagger Clause', 'Team Preview', 'Mega Rayquaza Ban Mod'],
-		banlist: []
+		banlist: ['Salamencite']
 	},
 	{
-		name: "UU",
+		name: "LS UU",
 		section: "ORAS Singles",
 
 		ruleset: ['OU'],
@@ -67,21 +67,21 @@ exports.Formats = [
 		banlist: ['Scald']
 	},
 	{
-		name: "RU",
+		name: "LS RU",
 		section: "ORAS Singles",
 
 		ruleset: ['UU'],
 		banlist: ['UU', 'BL2', 'Galladite', 'Houndoominite', 'Pidgeotite']
 	},
 	{
-		name: "NU",
+		name: "LS NU",
 		section: "ORAS Singles",
 
 		ruleset: ['RU'],
 		banlist: ['RU', 'BL3', 'Glalitite', 'Steelixite']
 	},
 	{
-		name: "LC",
+		name: "LS LC",
 		section: "ORAS Singles",
 
 		maxLevel: 5,
@@ -89,7 +89,7 @@ exports.Formats = [
 		banlist: ['LC Uber', 'Gligar', 'Misdreavus', 'Scyther', 'Sneasel', 'Tangela', 'Dragon Rage', 'Sonic Boom', 'Swagger']
 	},
 	{
-		name: "Anything Goes",
+		name: "LS Anything Goes",
 		section: "ORAS Singles",
 
 		ruleset: ['Pokemon', 'Endless Battle Clause', 'HP Percentage Mod', 'Cancel Mod', 'Team Preview'],
