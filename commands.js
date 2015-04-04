@@ -954,55 +954,28 @@ targetUser.mute(room.id, 24 * 60 * 60 * 1000, true);
 		}
 	},
 
-         hide: 'hideauth',
-hideauth: function(target, room, user) {
-if (!user.can('hideauth'))
-return this.sendReply('/hideauth - access denied.');
-var tar = ' ';
-if (target) {
-target = target.trim();
-if (Config.groupsranking.indexOf(target) > -1 && target != '#') {
-if (Config.groupsranking.indexOf(target) <= Config.groupsranking.indexOf(user.group)) {
-tar = target;
-} else {
-this.sendReply('The group symbol you have tried to use is of a higher authority than you have access to. Defaulting to \' \' instead.');
-}
-} else {
-this.sendReply('You have tried to use an invalid character as your auth symbol. Defaulting to \' \' instead.');
-}
-}
-user.getIdentity = function(roomid) {
-if (!roomid) roomid = 'lobby';
-if (this.locked) {
-return '‽' + this.name;
-}
-if (this.mutedRooms[roomid]) {
-return '!' + this.name;
-}
-var room = Rooms.rooms[roomid];
-if (room.auth) {
-if (room.auth[this.userid]) {
-return tar + this.name;
-}
-if (this.group !== ' ') return '+' + this.name;
-return ' ' + this.name;
-}
-return tar + this.name;
+        show: function (target, room, user) {
+if (!this.can('lock')) return;
+delete user.getIdentity
+user.hiding = false;
+user.updateIdentity();
+this.sendReply('You have revealed your staff symbol.');
+return false;
+},
+hide: function (target, room, user) {
+// add support for away
+if (!this.can('lock')) return;
+user.getIdentity = function () {
+var name = this.name + (this.away ? " - Ⓐⓦⓐⓨ" : "");
+if (this.locked) return '‽' + name;
+if (this.muted) return '!' + name;
+return ' ' + name;
 };
+user.hiding = true;
 user.updateIdentity();
-this.sendReply('You are now hiding your auth symbol as \'' + tar + '\'.');
-return this.logModCommand(user.name + ' is hiding auth symbol as \'' + tar + '\'');
+this.sendReply('You have hidden your staff symbol.');
 },
-show: 'showauth',
-showauth: function(target, room, user) {
-if (!user.can('hideauth'))
-return this.sendReply('/showauth - access denied.');
-delete user.getIdentity;
-user.updateIdentity();
-this.sendReply('You have now revealed your auth symbol.');
-return this.logModCommand(user.name + ' has revealed their auth symbol.');
-this.sendReply('Your symbol has been reset.');
-},
+ 
 
 	unbanall: function (target, room, user) {
 		if (!this.can('rangeban')) return false;
