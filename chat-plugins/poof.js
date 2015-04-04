@@ -1,5 +1,5 @@
 const messages = [
-"didn't get a cool message because none have been added!"
+"didn't get a cool message because none have been added!",
 "has vanished into nothingness!",
 "used Explosion!",
 "fell into the void.",
