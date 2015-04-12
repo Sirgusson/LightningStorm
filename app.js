@@ -350,7 +350,6 @@ global.Simulator = require('./simulator.js');
 
 global.Tournaments = require('./tournaments');
 
-global.Core = require('./core.js').core;
 
 try {
 	global.Dnsbl = require('./dnsbl.js');
