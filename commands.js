@@ -2092,3 +2092,61 @@ this.sendReply('You have hidden your staff symbol.');
 	}
 
 };
+
+//readMoney and writeMoney functions
+function readMoney(filename, user) {
+	var data = fs.readFileSync('config/'+filename+'.csv', 'utf8');
+	var rows = data.split("\n");
+	var matched = false;
+	for (var i = 0; i < rows.length; i++) {
+		if (!rows[i]) continue;
+		var parts = rows[i].split(",");
+		var userid = toId(parts[0]);
+		if (user === userid) {
+			var matched = true;
+			var amount = Number(parts[1]);
+			break;
+		}
+	}
+	if (matched === true) {
+		return amount;
+	} else {
+		return 0;
+	}
+}
+
+function writeMoney(filename, targetUser, added) {
+	var data = fs.readFileSync('config/'+filename+'.csv', 'utf8');
+	var rows = data.split("\n");
+	var matched = false;
+	var line = '';
+	for (var i = 0; i < rows.length; i++) {
+		if (!rows[i]) continue;
+		var parts = rows[i].split(",");
+		var userid = toId(parts[0]);
+		if (targetUser === userid) {
+			var matched = true;
+			var amount = Number(parts[1]);
+			line += rows[i];
+			break;
+		}
+	}
+	amount += added;
+	if (matched === true) {
+		var re = new RegExp(line,"g");
+		fs.readFile('config/'+filename+'.csv', 'utf8', function (err,data) {
+			if (err) {
+				return console.log(err);
+			}
+			var result = data.replace(re, Users.get(targetUser).userid+','+amount);
+			fs.writeFile('config/'+filename+'.csv', result, 'utf8', function (err) {
+				if (err) return console.log(err);
+			});
+		});
+	} else {
+		var log = fs.createWriteStream('config/'+filename+'.csv', {'flags': 'a'});
+		amount = added;
+		log.write("\n"+Users.get(targetUser).userid+','+amount);
+	}
+	return amount;
+}
