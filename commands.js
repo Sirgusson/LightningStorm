@@ -546,7 +546,7 @@ var commands = exports.commands = {
 			price = 40;
 			if (price <= user.money) {
 				user.money = user.money - price;
-				this.sendReply('You have purchased a trainer card. You need to message an Admin capable of adding this (Frost Deverloper or BrittleWind).');
+				this.sendReply('You have purchased a trainer card. You need to message Niko Bellic to get it .');
 				user.canTrainerCard = true;
 				this.add(user.name + ' has purchased a trainer card!');
 			} else {
