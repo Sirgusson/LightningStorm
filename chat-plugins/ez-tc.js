@@ -96,7 +96,7 @@ exports.commands = {
 					"/trainercard off - Disables broadcasting trainer cards in the current room.<br />" +
 					"/trainercard on - Enables broadcasting trainer cards in the current room.<br />" +
 					"/trainercard help - Shows this help command.<br />" +
-					"<a href=\"https://github.com/Luur98/PKL/blob/master/chat-plugins/ez-tc.js">EZ-TC Plugin by Luur98</a>"
+					"<a href=\"https://gist.github.com/jd4564/399934fce2e9a5ae29ad\">EZ-TC Plugin by Luur"
 				);
 		}
 	}
