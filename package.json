@@ -5,7 +5,6 @@
     "sugar": "1.4.1",
     "node-static": "0.7.6",
     "cloud-env": "0.1.0",
-    "request": "^2.54.0",
     "sockjs": "0.3.15",
     "es6-shim": "0.27.1"
   },
@@ -49,7 +48,9 @@
   ],
   "private": true,
   "devDependencies": {
+    "cache-swap": "~0.2.0",
     "gulp": "~3.8.7",
+    "gulp-cache": "~0.2.8",
     "gulp-jshint": "git://github.com/spalger/gulp-jshint#c18df3a11",
     "gulp-jscs": "~1.4.0",
     "gulp-replace": "~0.5.1",
