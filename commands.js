@@ -3,7 +3,7 @@
  * Pokemon Showdown - http://pokemonshowdown.com/
  *
  * These are system commands - commands required for Pokemon Showdown
- * to run. A lot of these are sent by the client.
+ * to run. A lot of these are sent by the client.s
  *
  * If you'd like to modify commands, please go to config/commands.js,
  * which also teaches you how to use commands.
@@ -608,6 +608,7 @@ var commands = exports.commands = {
 			'<tr><td>Animated</td><td>Buys an animated avatar to be applied to your name (you supply)</td><td>35</td></tr>' +
 			'<tr><td>Room</td><td>Buys a chatroom for you to own (within reason, can be refused)</td><td>100</td></tr>' +
 			'<tr><td>Trainer</td><td>Buys a trainer card which shows information through a command</td><td>40</td></tr>' +
+			'<tr><td>VIP</td><td>Buy a VIP who contain: Global Voice in the server,Free Custom Avatar,Free Trainer Card,32300 Bucks</td><td>3000</td></tr>' +
 			'<tr><td>Fix</td><td>Buys the ability to alter your current custom avatar or trainer card (don\'t buy if you have neither)!</td><td>10</td></tr>' +
 			'<tr><td>Declare</td><td>You get the ability to get two declares from an Admin in lobby. This can be used for league advertisement (not server)</td><td>25</td></tr>' +
 			'</table><br />To buy an item from the shop, use /buy [command].</center>');
